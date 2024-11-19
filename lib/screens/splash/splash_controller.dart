@@ -21,7 +21,7 @@ class SplashController extends GetxController {
     if (status) {
       // Get.offNamed(AppRoutes.homeScreen);
     } else {
-      Get.offNamed(AppRoutes.loginScreen);
+      Get.offNamed(AppRoutes.homeScreen);
     }
   }
 }

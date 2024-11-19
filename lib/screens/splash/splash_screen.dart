@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:kids_learning_app/app_helpers/app_spacing.dart';
 import 'package:kids_learning_app/screens/splash/splash_controller.dart';
-import '../../app_styles/app_constant_file/app_colors.dart';
 import '../../app_styles/app_constant_file/app_images.dart';
 
 class SplashScreen extends StatelessWidget {
@@ -16,15 +16,14 @@ class SplashScreen extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
+          // Image that covers the whole screen
           Positioned.fill(
             child: Image.asset(
               MyImages.splash,
               fit: BoxFit.cover,
-              height: Get.height,
               alignment: Alignment.center,
             ),
           ),
-          // SafeArea for Content
           SafeArea(
             child: Center(
               child: SingleChildScrollView(
@@ -33,14 +32,18 @@ class SplashScreen extends StatelessWidget {
                   children: [
                     Text(
                       "Welcome To",
-                      style: Get.textTheme.titleSmall?.copyWith(fontSize: 20),
+                      style: Get.textTheme.titleSmall?.copyWith(fontSize: 20, color: Colors.orange,),
                     ),
-                    // App Title
+                    widgetSpacerVertically(),
+                    widgetSpacerVertically(),
+                    widgetSpacerVertically(),
+                    widgetSpacerVertically(),
+                    widgetSpacerVertically(),
                     Text(
                       "Kids Learning",
                       style: GoogleFonts.abrilFatface(
                         textStyle: const TextStyle(
-                          color: MyColors.greenLight,
+                          color: Colors.orange,
                           fontSize: 40,
                         ),
                       ),

@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import '../screens/login/login_screen.dart';
+import '../screens/home/home_screen.dart';
 import '../screens/splash/splash_screen.dart';
 import 'app_routes.dart';
 
@@ -10,8 +10,8 @@ class AppPages {
       page: () => const SplashScreen(),
     ),
     GetPage(
-      name: AppRoutes.loginScreen,
-      page: () => const LoginScreen(),
+      name: AppRoutes.homeScreen,
+      page: () => const HomeScreen(),
     ),
   ];
 }
