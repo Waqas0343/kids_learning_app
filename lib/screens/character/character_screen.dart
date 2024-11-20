@@ -11,6 +11,7 @@ class CharacterScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Learn Characters"),
+        backgroundColor: Colors.purple.shade400,
       ),
     );
   }

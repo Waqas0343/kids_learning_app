@@ -11,6 +11,7 @@ class NumbersScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Learn Numbers'),
+        backgroundColor: Colors.purple.shade400,
       ),
     );
   }

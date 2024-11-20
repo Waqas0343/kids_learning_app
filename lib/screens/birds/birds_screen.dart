@@ -8,6 +8,7 @@ class BirdsScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Learn Birds'),
+        backgroundColor: Colors.purple.shade400,
       ),
     );
   }

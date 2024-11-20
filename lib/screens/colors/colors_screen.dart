@@ -11,6 +11,7 @@ class ColorsScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Learn Colors'),
+        backgroundColor: Colors.purple.shade400,
       ),
     );
   }

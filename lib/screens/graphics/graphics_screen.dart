@@ -11,6 +11,7 @@ class GraphicsScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Create Graphics"),
+        backgroundColor: Colors.purple.shade400,
       ),
     );
   }

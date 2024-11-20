@@ -10,7 +10,8 @@ class ShapesScreen extends StatelessWidget {
     final ShapesController controller = Get.put(ShapesController());
     return  Scaffold(
       appBar: AppBar(
-        title: const Text("Learn Shap"),
+        title: const Text("Learn Shapes"),
+        backgroundColor: Colors.purple.shade400,
       ),
     );
   }
