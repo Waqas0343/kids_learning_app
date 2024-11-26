@@ -11,7 +11,7 @@ class EditorToolbar extends StatelessWidget {
     final GraphicsController controller = Get.find();
 
     return Container(
-      color: Colors.blue,
+      color: Colors.green,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [

@@ -2,11 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_drawing_board/flutter_drawing_board.dart';
 import 'package:get/get.dart';
 import 'package:kids_learning_app/app_helpers/app_spacing.dart';
-import 'controllers/character_controller.dart';
+import 'controllers/draw_character_controller.dart';
 
-class CharacterScreen extends StatelessWidget {
-  const CharacterScreen({super.key});
-
+class DrawCharacterScreen extends StatelessWidget {
+  const DrawCharacterScreen({super.key});
   @override
   Widget build(BuildContext context) {
     final CharacterController controller = Get.put(CharacterController());
@@ -15,11 +14,7 @@ class CharacterScreen extends StatelessWidget {
         title:  Text(
           'Learn Characters',
           style: Get.textTheme.titleSmall?.copyWith(
-            fontWeight: FontWeight.bold,
-            fontSize: 24,
-            color: Colors.white,
-          )
-        ),
+            fontWeight: FontWeight.bold, fontSize: 24, color: Colors.white,),),
         backgroundColor: Colors.red,
         centerTitle: true,
         elevation: 6,
