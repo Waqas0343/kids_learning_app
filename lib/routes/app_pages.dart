@@ -3,12 +3,14 @@ import '../screens/animal/animal_screen.dart';
 import '../screens/birds/birds_screen.dart';
 import '../screens/character/characters_screen.dart';
 import '../screens/character/draw_character_screen.dart';
+import '../screens/colors/color_filling_screen.dart';
 import '../screens/colors/colors_screen.dart';
 import '../screens/drawing/drawing_screen.dart';
 import '../screens/graphics/graphics_screen.dart';
 import '../screens/home/home_screen.dart';
 import '../screens/numbers/draw_number_screen.dart';
 import '../screens/numbers/numbers_screen.dart';
+import '../screens/shaps/draw_shapes_screen.dart';
 import '../screens/shaps/shaps_screen.dart';
 import '../screens/splash/splash_screen.dart';
 import 'app_routes.dart';
@@ -62,6 +64,14 @@ class AppPages {
     GetPage(
       name: AppRoutes.birdsScreen,
       page: () => const BirdsScreen(),
+    ),
+    GetPage(
+      name: AppRoutes.colorFillingScreen,
+      page: () => const ColorFillingScreen(),
+    ),
+    GetPage(
+      name: AppRoutes.drawShapesScreen,
+      page: () => const DrawShapesScreen(),
     ),
 
   ];

@@ -2,13 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:get/get.dart';
 
-class ColorsController extends GetxController {
-  final FlutterTts flutterTts = FlutterTts();
-  @override
-  void onInit() {
-    // TODO: implement onInit
-    super.onInit();
-  }
+class ColorFillingController extends GetxController {
+  FlutterTts flutterTts = FlutterTts();
+  Rx<Color> currentFillColor = Colors.transparent.obs;
+  late String targetColorName;
+  late Color targetBorderColor;
+
   final List<Map<String, dynamic>> colorsList = [
     {'color': Colors.red, 'name': 'Red'},
     {'color': Colors.blue, 'name': 'Blue'},
@@ -95,4 +94,41 @@ class ColorsController extends GetxController {
     {'color': const Color(0xFFFFFFE0), 'name': 'Light Yellow'},
   ];
 
+  void generateRandomTargetColor() {
+    final randomColor = (colorsList..shuffle()).first;
+    targetColorName = randomColor['name'];
+    targetBorderColor = randomColor['color'];
+    currentFillColor.value = Colors.transparent;
+    update();
+  }
+
+  void checkAndFillColor(String selectedColorName, Color selectedColor) {
+    if (selectedColorName == targetColorName) {
+      currentFillColor.value = selectedColor;
+      Get.snackbar(
+        'Correct!',
+        'You filled the shape correctly!',
+        backgroundColor: Colors.green,
+        colorText: Colors.white,
+        duration: const Duration(seconds: 1),
+      );
+
+      Future.delayed(const Duration(seconds: 1), () {
+        generateRandomTargetColor();
+      });
+    } else {
+      Get.snackbar('Incorrect!', 'Try again!',
+          backgroundColor: Colors.red, colorText: Colors.white);
+    }
+  }
+  void speakNumber(String text) async {
+    await flutterTts.setLanguage("en-US");
+    await flutterTts.setSpeechRate(0.5);
+    await flutterTts.speak(text);
+  }
+  @override
+  void onInit() {
+    super.onInit();
+    generateRandomTargetColor();
+  }
 }

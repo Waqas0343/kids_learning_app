@@ -11,6 +11,8 @@ class AppRoutes {
   static const String animalScreen = '/animalScreen';
   static const String birdsScreen = '/birdsScreen';
   static const String drawNumberScreen = '/drawNumberScreen';
+  static const String colorFillingScreen = '/colorFillingScreen';
+  static const String drawShapesScreen = '/drawShapesScreen';
 
 }
 
