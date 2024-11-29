@@ -1,10 +1,16 @@
+import 'dart:math';
+import 'dart:typed_data';
+import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:get/get.dart';
-import 'package:flutter/material.dart';
-import 'package:kids_learning_app/app_widgets/app_debug_widget/app_debug_pointer.dart';
 
-class ShapesController extends GetxController {
-  final FlutterTts flutterTts = FlutterTts();
+class DrawShapesController extends GetxController {
+  FlutterTts flutterTts = FlutterTts();
+  RxString currentNumber = ''.obs;
+  var matchPercentage = 0.0.obs;
+  var drawnImage = Rx<Uint8List?>(null);
+  final GlobalKey repaintKey = GlobalKey();
+
   final shapesList = [
     {'name': 'Circle', 'shape': Icons.circle_outlined},
     {'name': 'Square', 'shape': Icons.crop_square},
@@ -41,11 +47,32 @@ class ShapesController extends GetxController {
     {'name': 'Hexagram', 'shape': Icons.grade},
   ].obs;
 
+  Rx<Map<String, dynamic>> selectedShape = Rx<Map<String, dynamic>>({});
 
+  @override
+  void onInit() {
+    super.onInit();
+    pickRandomShape();
+  }
 
+  void pickRandomShape() {
+    final randomIndex = Random().nextInt(shapesList.length);
+    selectedShape.value = shapesList[randomIndex];
+    update();
+  }
 
-  void onShapeClick(String shapeName) {
-    Debug.log('Shape clicked: $shapeName');
+  void setDrawingImage(Uint8List image) {
+    drawnImage.value = image;
+  }
 
+  void clearCanvas() {
+    drawnImage.value = null;
+    update();
+  }
+
+  void speakNumber(String number) async {
+    await flutterTts.setLanguage("en-US");
+    await flutterTts.setSpeechRate(0.5);
+    await flutterTts.speak(number);
   }
 }
