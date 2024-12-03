@@ -17,7 +17,7 @@ class ShapesScreen extends StatelessWidget {
         centerTitle: true,
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(8.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
@@ -28,7 +28,7 @@ class ShapesScreen extends StatelessWidget {
                 children: [
                   Text('Click On a Shape To Learn It!',
                       style: Get.textTheme.titleSmall?.copyWith(
-                        fontSize: 18,
+                        fontSize: 14,
                         fontWeight: FontWeight.w500,
                         color: Colors.black87,
                       )),
@@ -72,14 +72,14 @@ class ShapesScreen extends StatelessWidget {
                         children: [
                           Icon(
                             shape['shape'] as IconData,
-                            size: 100,
+                            size: 80,
                             color: Colors.purple,
                           ),
                           const SizedBox(height: 8),
                           Text(
                             shape['name'] as String,
                             style: Get.textTheme.titleSmall?.copyWith(
-                              fontSize: 16,
+                              fontSize: 12,
                               fontWeight: FontWeight.bold,
                             )
                           ),

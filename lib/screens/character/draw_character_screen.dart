@@ -103,7 +103,7 @@ class DrawCharacterScreen extends StatelessWidget {
                   },
                   onPointerUp: (PointerUpEvent event) {
                     debugPrint('Pointer Up at: ${event.position}');
-                    controller.captureImage(controller.repaintKey);
+                    controller.captureImage();
                   },
                 ),
               ),
