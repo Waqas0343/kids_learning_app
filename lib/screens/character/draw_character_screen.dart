@@ -26,7 +26,7 @@ class DrawCharacterScreen extends StatelessWidget {
         ],
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+        padding: const EdgeInsets.symmetric(horizontal: 0.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
@@ -36,7 +36,7 @@ class DrawCharacterScreen extends StatelessWidget {
               style: Get.textTheme.titleMedium?.copyWith(
                 color: Colors.black,
                 fontWeight: FontWeight.bold,
-                fontSize: 20,
+                fontSize: 14,
               ),
             ),
             widgetSpacerVertically(),
@@ -110,7 +110,7 @@ class DrawCharacterScreen extends StatelessWidget {
             ),
             widgetSpacerVertically(),
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 16.0),
+              padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 12),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
