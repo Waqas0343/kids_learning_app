@@ -40,8 +40,8 @@ class HomeScreen extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Image.network(
-                          'https://st5.depositphotos.com/72257490/62421/v/450/depositphotos_624215136-stock-illustration-cute-boy-painting-cutting-colorful.jpg',
+                      Image.asset(
+                          'assets/images/1_das.jpg',
                           fit: BoxFit.fill,
                           width: 120,
                           height: 120),
@@ -79,8 +79,8 @@ class HomeScreen extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Image.network(
-                          'https://static.vecteezy.com/system/resources/previews/002/399/947/non_2x/happy-kids-studying-and-learning-vector.jpg',
+                      Image.asset(
+                          'assets/images/2_das.jpg',
                           fit: BoxFit.fill,
                           width: 120,
                           height: 120),
@@ -118,8 +118,8 @@ class HomeScreen extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Image.network(
-                          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvVqqQ631TPR7cUIan8OOkx1d0Dns9nGGs3w&s',
+                      Image.asset(
+                          'assets/images/3_das.jpeg',
                           fit: BoxFit.fill,
                           width: 120,
                           height: 120),
@@ -157,8 +157,8 @@ class HomeScreen extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Image.network(
-                          'https://img.freepik.com/premium-vector/vector-illustration-kids-learning-math-with-colorful-numbersconcept-multi-colored-numbers_723224-1779.jpg',
+                      Image.asset(
+                          'assets/images/4_das.png',
                           fit: BoxFit.fill,
                           width: 120,
                           height: 120),
@@ -196,8 +196,8 @@ class HomeScreen extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Image.network(
-                          'https://www.shutterstock.com/image-photo/set-colorful-hand-prints-rainbow-600nw-62824108.jpg',
+                      Image.asset(
+                          'assets/images/5_das.jpg',
                           fit: BoxFit.fill,
                           width: 120,
                           height: 120),
@@ -235,8 +235,8 @@ class HomeScreen extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Image.network(
-                          'https://i5.walmartimages.com/seo/Wooden-Math-Blocks-Learning-Shapes-for-Kids-16-pcs_4e58195a-d29c-4ae2-819a-6a3de7ccbdd3.996aab967284d6a1f1d0a972001cfe51.jpeg?odnHeight=320&odnWidth=320&odnBg=FFFFFF',
+                      Image.asset(
+                          'assets/images/6_das.jpg',
                           fit: BoxFit.fill,
                           width: 120,
                           height: 120),
@@ -274,8 +274,8 @@ class HomeScreen extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Image.network(
-                          'https://www.shutterstock.com/image-vector/cartoon-happy-lion-isolated-on-600nw-675125593.jpg',
+                      Image.asset(
+                          'assets/images/7_das.jpg',
                           fit: BoxFit.fill,
                           width: 120,
                           height: 120),
@@ -313,8 +313,8 @@ class HomeScreen extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Image.network(
-                          'https://www.shutterstock.com/image-vector/littel-bird-waving-cute-young-600nw-1683344230.jpg',
+                      Image.asset(
+                          'assets/images/8_das.jpg',
                           fit: BoxFit.fill,
                           width: 120,
                           height: 120),

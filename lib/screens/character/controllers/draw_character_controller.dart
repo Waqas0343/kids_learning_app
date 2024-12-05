@@ -8,6 +8,7 @@ import 'package:google_ml_kit/google_ml_kit.dart';
 import 'package:kids_learning_app/app_widgets/app_debug_widget/app_debug_pointer.dart';
 
 class CharacterController extends GetxController {
+  final textRecognizer = GoogleMlKit.vision.textRecognizer();
   var currentCharacter = ''.obs;
   var matchPercentage = 0.0.obs;
   var isLoading = false.obs;
@@ -59,37 +60,36 @@ class CharacterController extends GetxController {
     }
 
     isLoading.value = true;
-    final textRecognizer = GoogleMlKit.vision.textRecognizer();
 
     try {
-      final boundary =
-      repaintKey.currentContext?.findRenderObject() as RenderRepaintBoundary;
+      final boundary = repaintKey.currentContext?.findRenderObject() as RenderRepaintBoundary?;
+      if (boundary == null) {
+        throw Exception("RenderRepaintBoundary is null. Ensure the widget is visible.");
+      }
+
       final image = await boundary.toImage();
       final width = image.width.toDouble();
       final height = image.height.toDouble();
-      final byteData = await image.toByteData(format: ImageByteFormat.rawRgba);
 
-      if (byteData == null) {
-        throw Exception("Failed to retrieve byte data from the image.");
-      }
+      // Ensure we are using the correct format
+      final byteData = await image.toByteData(format: ImageByteFormat.rawRgba);
+      if (byteData == null) throw Exception("Failed to retrieve byte data.");
 
       final bytes = byteData.buffer.asUint8List();
 
-      Debug.log("Image captured: width=$width, height=$height, bytes=${bytes.length}");
-
-      // Correct InputImage metadata
+      // Adjust the format and metadata to align with rawRgba
       final inputImage = InputImage.fromBytes(
         bytes: bytes,
         metadata: InputImageMetadata(
           size: Size(width, height),
-          rotation: InputImageRotation.rotation0deg, // Adjust rotation if needed
-          format: InputImageFormat.nv21, // Ensure this matches the rawRgba format
-          bytesPerRow: width.toInt() * 4, // 4 bytes per pixel for RGBA
+          rotation: InputImageRotation.rotation0deg,
+          format: InputImageFormat.yv12, // Align with rawRgba format
+          bytesPerRow: width.toInt() * 4, // Ensure accurate row size
         ),
       );
 
       final recognizedText = await textRecognizer.processImage(inputImage);
-      final detectedText = recognizedText.text.replaceAll(RegExp(r'\s+'), '').trim();
+      final detectedText = recognizedText.text.replaceAll(RegExp(r'\s+'), '').toString();
 
       Debug.log("Detected text: $detectedText");
 
@@ -101,10 +101,7 @@ class CharacterController extends GetxController {
 
       final normalizedExpected = currentCharacter.value.trim().toLowerCase();
       final normalizedDetected = detectedText.trim().toLowerCase();
-      matchPercentage.value =
-          calculateMatchPercentage(normalizedExpected, normalizedDetected);
-
-      Debug.log("Match percentage: ${matchPercentage.value}");
+      matchPercentage.value = calculateMatchPercentage(normalizedExpected, normalizedDetected);
 
       if (matchPercentage.value > 80.0) {
         Get.snackbar('Success', 'Good job! Next character coming up.');
@@ -120,11 +117,8 @@ class CharacterController extends GetxController {
       Get.snackbar('Error', 'Failed to recognize text. Please try again.');
     } finally {
       isLoading.value = false;
-      await textRecognizer.close();
     }
   }
-
-
 
   int levenshtein(String a, String b) {
     final List<List<int>> matrix = List.generate(
@@ -175,4 +169,10 @@ class CharacterController extends GetxController {
       Get.snackbar('Error', 'Failed to play text-to-speech.');
     }
   }
+  @override
+  void onClose() {
+    textRecognizer.close();
+    super.onClose();
+  }
+
 }

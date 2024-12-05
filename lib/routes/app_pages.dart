@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import '../screens/animal/animal_screen.dart';
+import '../screens/animal/draw_animal_shap.dart';
 import '../screens/birds/birds_screen.dart';
 import '../screens/character/characters_screen.dart';
 import '../screens/character/draw_character_screen.dart';
@@ -72,6 +73,11 @@ class AppPages {
     GetPage(
       name: AppRoutes.drawShapesScreen,
       page: () => const DrawShapesScreen(),
+    ),
+
+    GetPage(
+      name: AppRoutes.drawAnimalScreen,
+      page: () => const DrawAnimalShape(),
     ),
 
   ];

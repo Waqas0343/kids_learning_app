@@ -18,12 +18,6 @@ class DrawCharacterScreen extends StatelessWidget {
         backgroundColor: Colors.red,
         centerTitle: true,
         elevation: 6,
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.help_outline, size: 30),
-            onPressed: () {},
-          ),
-        ],
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 0.0),

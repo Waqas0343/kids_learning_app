@@ -13,6 +13,7 @@ class AppRoutes {
   static const String drawNumberScreen = '/drawNumberScreen';
   static const String colorFillingScreen = '/colorFillingScreen';
   static const String drawShapesScreen = '/drawShapesScreen';
+  static const String drawAnimalScreen = '/drawAnimalScreen';
 
 }
 
