@@ -64,30 +64,35 @@ class AnimalScreen extends StatelessWidget {
                     final shape = controller.animalsList[index];
                     return GestureDetector(
                       onTap: () {
-                        controller.flutterTts.speak(shape['name'] as String);
+                        controller.selectBird(index); // Update the selected bird
+                        controller.flutterTts.speak(shape['name'] as String); // Speak the name
                       },
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Image.asset(
-                            shape['icon'] as String, // Explicit cast to String
+                            shape['icon'] as String,
                             fit: BoxFit.fill,
                             width: 90,
                             height: 90,
                           ),
-
-                          Text(
+                          Obx(() {
+                            return Text(
                               shape['name'] as String,
                               style: Get.textTheme.titleSmall?.copyWith(
                                 fontSize: 12,
                                 fontWeight: FontWeight.bold,
-                              )
-                          ),
+                                color: controller.selectedIndex.value == index
+                                    ? Colors.purple // Highlighted color
+                                    : Colors.black87, // Default color
+                              ),
+                            );
+                          }),
                         ],
                       ),
                     );
-
                   },
+
                 );
               }),
             ),

@@ -1,13 +1,10 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:get/get.dart';
-
 import '../../../app_widgets/app_debug_widget/app_debug_pointer.dart';
 
 class AnimalController extends GetxController {
   final FlutterTts flutterTts = FlutterTts();
-
-
+  var selectedIndex = (-1).obs;
   final animalsList = [
     {'name': 'Cat', 'icon': 'assets/images/cat.jpg'},
     {'name': 'Dog', 'icon': 'assets/images/dog.png'},
@@ -50,17 +47,16 @@ class AnimalController extends GetxController {
 
   ].obs;
 
-
-
-
   @override
   void onInit() {
-    // TODO: implement onInit
     super.onInit();
   }
 
   void onShapeClick(String shapeName) {
     Debug.log('Shape clicked: $shapeName');
 
+  }
+  void selectBird(int index) {
+    selectedIndex.value = index;
   }
 }
