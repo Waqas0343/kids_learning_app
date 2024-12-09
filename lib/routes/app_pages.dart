@@ -10,6 +10,7 @@ import '../screens/drawing/drawing_screen.dart';
 import '../screens/graphics/graphics_screen.dart';
 import '../screens/home/home_screen.dart';
 import '../screens/numbers/draw_number_screen.dart';
+import '../screens/numbers/kids_learn_table.dart';
 import '../screens/numbers/numbers_screen.dart';
 import '../screens/shaps/draw_shapes_screen.dart';
 import '../screens/shaps/shaps_screen.dart';
@@ -78,6 +79,10 @@ class AppPages {
     GetPage(
       name: AppRoutes.drawAnimalScreen,
       page: () => const DrawAnimalShape(),
+    ),
+    GetPage(
+      name: AppRoutes.kidsLearnTableScreen,
+      page: () => const KidsLearnTable(),
     ),
 
   ];
