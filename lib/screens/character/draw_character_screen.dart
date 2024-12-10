@@ -61,15 +61,14 @@ class DrawCharacterScreen extends StatelessWidget {
             ),
             widgetSpacerVertically(),
             Obx(() => Text(
-                'Match: ${controller.matchPercentage.value.toStringAsFixed(1)}%',
-                style: Get.textTheme.titleSmall?.copyWith(
-                  fontSize: 22,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.red,
-                ),
+              'Match: ${controller.matchValuePercentage.value.toStringAsFixed(1)}%',
+              style: Get.textTheme.titleSmall?.copyWith(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+                color: Colors.red,
               ),
             ),
-
+            ),
             widgetSpacerVertically(),
             Expanded(
               child: RepaintBoundary(
@@ -112,7 +111,9 @@ class DrawCharacterScreen extends StatelessWidget {
                     child: SizedBox(
                       height: 55,
                       child: ElevatedButton(
-                        onPressed: controller.clearCanvas,
+                        onPressed: (){
+                          // controller.clearCanvas,
+                        },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.red.shade600,
                           padding: const EdgeInsets.symmetric(vertical: 14.0),
@@ -137,7 +138,7 @@ class DrawCharacterScreen extends StatelessWidget {
                     child: SizedBox(
                       height: 55,
                       child: ElevatedButton(
-                        onPressed: controller.checkMatch,
+                        onPressed: controller.captureAndDetectText,
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.orangeAccent,
                           padding: const EdgeInsets.symmetric(vertical: 14.0),

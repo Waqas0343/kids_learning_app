@@ -60,7 +60,6 @@ class NumbersScreen extends StatelessWidget {
             child: Obx(() {
               final currentPage = controller.currentPage.value;
               final startNumber = (currentPage - 1) * 100 + 1;
-              final endNumber = currentPage * 100;
               return GridView.builder(
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 5,

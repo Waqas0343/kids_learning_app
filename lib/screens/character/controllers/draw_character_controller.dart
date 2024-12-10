@@ -1,16 +1,19 @@
+import 'dart:io';
 import 'dart:typed_data';
 import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:get/get.dart';
 import 'package:google_ml_kit/google_ml_kit.dart';
 import 'package:kids_learning_app/app_widgets/app_debug_widget/app_debug_pointer.dart';
+import 'package:path_provider/path_provider.dart';
 
 class CharacterController extends GetxController {
   final textRecognizer = GoogleMlKit.vision.textRecognizer();
   var currentCharacter = ''.obs;
-  var matchPercentage = 0.0.obs;
+  var matchValuePercentage = 0.0.obs;
   var isLoading = false.obs;
   var drawnImage = Rx<Uint8List?>(null);
   final GlobalKey repaintKey = GlobalKey();
@@ -36,14 +39,17 @@ class CharacterController extends GetxController {
   Future<void> captureImage() async {
     try {
       isLoading.value = true;
-      final boundary =
-      repaintKey.currentContext?.findRenderObject() as RenderRepaintBoundary;
+      final boundary = repaintKey.currentContext?.findRenderObject() as RenderRepaintBoundary;
+      if (boundary == null) throw Exception("RenderRepaintBoundary is null");
+
       final image = await boundary.toImage(pixelRatio: 3.0);
       final byteData = await image.toByteData(format: ImageByteFormat.png);
       if (byteData != null) {
         final bytes = byteData.buffer.asUint8List();
         setDrawingImage(bytes);
         Debug.log("Captured image successfully.");
+      } else {
+        throw Exception("Failed to capture image.");
       }
     } catch (e) {
       Debug.log("Error capturing image: $e");
@@ -53,74 +59,76 @@ class CharacterController extends GetxController {
     }
   }
 
-  Future<void> checkMatch() async {
+  Future<void> captureAndDetectText() async {
     if (drawnImage.value == null) {
       Get.snackbar('Error', 'Please draw the character first!');
       return;
     }
 
     isLoading.value = true;
-
     try {
+      // Capture the drawn image from the widget
       final boundary = repaintKey.currentContext?.findRenderObject() as RenderRepaintBoundary?;
       if (boundary == null) {
-        throw Exception("RenderRepaintBoundary is null. Ensure the widget is visible.");
+        Get.snackbar('Error', 'RenderRepaintBoundary is null. Ensure widget is visible.');
+        return;
       }
 
-      final image = await boundary.toImage();
+      final image = await boundary.toImage(pixelRatio: 5.0);  // Adjust pixel ratio for better clarity
       final width = image.width.toDouble();
       final height = image.height.toDouble();
+      print("Captured image dimensions: width = $width, height = $height");
 
-      // Ensure we are using the correct format
       final byteData = await image.toByteData(format: ImageByteFormat.rawRgba);
       if (byteData == null) throw Exception("Failed to retrieve byte data.");
-
       final bytes = byteData.buffer.asUint8List();
 
-      // Adjust the format and metadata to align with rawRgba
+      // Save the image for debugging
+      final directory = await getApplicationDocumentsDirectory();
+      final path = '${directory.path}/captured_image.png';
+      final imgFile = File(path)..writeAsBytesSync(bytes);
+      print('Captured image saved to: $path');
+
+      // Process image for OCR
       final inputImage = InputImage.fromBytes(
         bytes: bytes,
         metadata: InputImageMetadata(
           size: Size(width, height),
           rotation: InputImageRotation.rotation0deg,
-          format: InputImageFormat.yv12, // Align with rawRgba format
-          bytesPerRow: width.toInt() * 4, // Ensure accurate row size
+          format: InputImageFormat.yv12,
+          bytesPerRow: width.toInt() * 4,
         ),
       );
 
+      // Run OCR on the image
       final recognizedText = await textRecognizer.processImage(inputImage);
-      final detectedText = recognizedText.text.replaceAll(RegExp(r'\s+'), '').toString();
+      print("Raw Detected Text: '${recognizedText.text}'");  // Log raw text
 
-      Debug.log("Detected text: $detectedText");
-
-      if (detectedText.isEmpty) {
-        matchPercentage.value = 0.0;
-        Get.snackbar('Try Again', 'No recognizable text. Please try again!');
+      // If empty, show a message
+      if (recognizedText.text.isEmpty) {
+        Get.snackbar('Error', 'No text detected. Please try again with clearer input.');
         return;
       }
 
-      final normalizedExpected = currentCharacter.value.trim().toLowerCase();
-      final normalizedDetected = detectedText.trim().toLowerCase();
-      matchPercentage.value = calculateMatchPercentage(normalizedExpected, normalizedDetected);
+      final detectedText = recognizedText.text.replaceAll(RegExp(r'\s+'), '').toLowerCase();
+      Get.snackbar('Detected Text', detectedText);  // Display final cleaned text
+      print("Cleaned Detected Text: '$detectedText'");
 
-      if (matchPercentage.value > 80.0) {
-        Get.snackbar('Success', 'Good job! Next character coming up.');
-        getRandomCharacter();
-      } else {
-        Get.snackbar(
-          'Try Again',
-          'Keep practicing! Match: ${matchPercentage.value.toStringAsFixed(1)}%',
-        );
-      }
     } catch (e) {
-      Debug.log("Error during text recognition: $e");
       Get.snackbar('Error', 'Failed to recognize text. Please try again.');
+      print("Error during text recognition: $e");
     } finally {
       isLoading.value = false;
     }
   }
 
-  int levenshtein(String a, String b) {
+
+
+
+
+
+  // Levenshtein distance function for calculating the match percentage
+  int levenshteinDistance(String a, String b) {
     final List<List<int>> matrix = List.generate(
       a.length + 1,
           (i) => List.generate(b.length + 1, (j) => 0),
@@ -145,16 +153,16 @@ class CharacterController extends GetxController {
     return matrix[a.length][b.length];
   }
 
+
   double calculateMatchPercentage(String expected, String recognized) {
-    int distance = levenshtein(expected, recognized);
-    int maxLength =
-    expected.length > recognized.length ? expected.length : recognized.length;
+    int distance = levenshteinDistance(expected, recognized);
+    int maxLength = expected.length > recognized.length ? expected.length : recognized.length;
     return (1 - (distance / maxLength)) * 100;
   }
 
   void clearCanvas() {
     drawnImage.value = null;
-    matchPercentage.value = 0.0;
+    matchValuePercentage.value = 0.0;
     Debug.log("Canvas cleared.");
   }
 
@@ -169,10 +177,10 @@ class CharacterController extends GetxController {
       Get.snackbar('Error', 'Failed to play text-to-speech.');
     }
   }
+
   @override
   void onClose() {
     textRecognizer.close();
     super.onClose();
   }
-
 }
