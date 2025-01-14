@@ -2,19 +2,23 @@ import 'package:flutter/material.dart';
 import 'package:flutter_drawing_board/flutter_drawing_board.dart';
 import 'package:get/get.dart';
 import 'package:kids_learning_app/app_helpers/app_spacing.dart';
+import 'package:kids_learning_app/app_widgets/app_debug_widget/app_debug_pointer.dart';
 import 'controllers/draw_character_controller.dart';
 
 class DrawCharacterScreen extends StatelessWidget {
   const DrawCharacterScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     final CharacterController controller = Get.put(CharacterController());
+
     return Scaffold(
       appBar: AppBar(
         title:  Text(
           'Learn Characters',
           style: Get.textTheme.titleSmall?.copyWith(
-            fontWeight: FontWeight.bold, fontSize: 24, color: Colors.white,),),
+            fontWeight: FontWeight.bold, fontSize: 24, color: Colors.white,),
+        ),
         backgroundColor: Colors.red,
         centerTitle: true,
         elevation: 6,
@@ -35,35 +39,35 @@ class DrawCharacterScreen extends StatelessWidget {
             ),
             widgetSpacerVertically(),
             Obx(() => Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  IconButton(
-                    icon: const Icon(
-                      Icons.volume_up,
-                      size: 40,
-                      color: Colors.green,
-                    ),
-                    onPressed: () {
-                      controller.speakCharacter(controller.currentCharacter.value);
-                    },
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                IconButton(
+                  icon: const Icon(
+                    Icons.volume_up,
+                    size: 40,
+                    color: Colors.green,
                   ),
-                  widgetSpacerHorizontally(),
-                  Text(
-                    controller.currentCharacter.value,
-                    style: Get.textTheme.titleSmall?.copyWith(
-                      fontSize: 70,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.pink,
-                    ),
+                  onPressed: () {
+                    controller.speakCharacter(controller.currentCharacter.value);
+                  },
+                ),
+                widgetSpacerHorizontally(),
+                Text(
+                  controller.currentCharacter.value,
+                  style: Get.textTheme.titleSmall?.copyWith(
+                    fontSize: 70,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.red,
                   ),
-                ],
-              ),
+                ),
+              ],
+            ),
             ),
             widgetSpacerVertically(),
             Obx(() => Text(
               'Match: ${controller.matchValuePercentage.value.toStringAsFixed(1)}%',
               style: Get.textTheme.titleSmall?.copyWith(
-                fontSize: 22,
+                fontSize: 24,
                 fontWeight: FontWeight.bold,
                 color: Colors.red,
               ),
@@ -87,15 +91,16 @@ class DrawCharacterScreen extends StatelessWidget {
                   boardScaleEnabled: true,
                   boardPanEnabled: true,
                   maxScale: 5.0,
-                  minScale: 0.5,
+                  minScale: 0.9,
+
                   onPointerDown: (PointerDownEvent event) {
-                    debugPrint('Pointer Down at: ${event.position}');
+                    Debug.log('Pointer Down at: ${event.position}');
                   },
                   onPointerMove: (PointerMoveEvent event) {
-                    debugPrint('Pointer Moved at: ${event.position}');
+                    Debug.log('Pointer Moved at: ${event.position}');
                   },
                   onPointerUp: (PointerUpEvent event) {
-                    debugPrint('Pointer Up at: ${event.position}');
+                    Debug.log('Pointer Up at: ${event.position}');
                     controller.captureImage();
                   },
                 ),
@@ -112,7 +117,7 @@ class DrawCharacterScreen extends StatelessWidget {
                       height: 55,
                       child: ElevatedButton(
                         onPressed: (){
-                          // controller.clearCanvas,
+                          controller.clearCanvas();
                         },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.red.shade600,
@@ -148,12 +153,12 @@ class DrawCharacterScreen extends StatelessWidget {
                           elevation: 6,
                         ),
                         child: Text(
-                          'Submit',
+                          'Detect',
                           style: Get.textTheme.titleSmall?.copyWith(
-                        fontSize: 14,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                        ),
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
                     ),
