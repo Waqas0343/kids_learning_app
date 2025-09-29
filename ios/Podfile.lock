@@ -4,7 +4,6 @@ PODS:
     - Flutter
   - fluttertoast (0.0.2):
     - Flutter
-    - Toast
   - google_mlkit_barcode_scanning (0.13.0):
     - Flutter
     - google_mlkit_commons
@@ -267,7 +266,6 @@ PODS:
     - TensorFlowLiteSwift (= 2.12.0)
     - TensorFlowLiteSwift/CoreML (= 2.12.0)
     - TensorFlowLiteSwift/Metal (= 2.12.0)
-  - Toast (4.1.1)
 
 DEPENDENCIES:
   - Flutter (from `Flutter`)
@@ -332,7 +330,6 @@ SPEC REPOS:
     - SSZipArchive
     - TensorFlowLiteC
     - TensorFlowLiteSwift
-    - Toast
 
 EXTERNAL SOURCES:
   Flutter:
@@ -381,9 +378,9 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/tflite_flutter/ios"
 
 SPEC CHECKSUMS:
-  Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
+  Flutter: cabc95a1d2626b1b06e7179b784ebcf0c0cde467
   flutter_tts: b88dbc8655d3dc961bc4a796e4e16a4cc1795833
-  fluttertoast: 76fea30fcf04176325f6864c87306927bd7d2038
+  fluttertoast: 2c67e14dce98bbdb200df9e1acf610d7a6264ea1
   google_mlkit_barcode_scanning: c0a50c1042484a6ca506967dfa91fa7d7e74f280
   google_mlkit_commons: 92c769cc2e0a2bfdeb3c38091a36e8a9cc8c63d4
   google_mlkit_digital_ink_recognition: c38f0858e61478b43de4d34a5f75eca91ff00715
@@ -440,8 +437,7 @@ SPEC CHECKSUMS:
   TensorFlowLiteC: 20785a69299185a379ba9852b6625f00afd7984a
   TensorFlowLiteSwift: 3a4928286e9e35bdd3e17970f48e53c80d25e793
   tflite_flutter: 64b192e11352fe36943ab6656e1d49207f1a5595
-  Toast: 1f5ea13423a1e6674c4abdac5be53587ae481c4e
 
-PODFILE CHECKSUM: f2095d9946016fd9e5adc1075579dbb37c2bbacc
+PODFILE CHECKSUM: b0838604ac4c22f382a56b8bfcb183d74bc3dbf1
 
 COCOAPODS: 1.16.2
