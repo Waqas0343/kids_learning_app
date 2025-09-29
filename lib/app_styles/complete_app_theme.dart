@@ -42,7 +42,7 @@ class AppThemeInfo {
           ),
         ),
       ),
-      cardTheme: const CardTheme(
+      cardTheme: const CardThemeData(
         elevation: 0,
       ),
       appBarTheme: const AppBarTheme(
@@ -93,11 +93,11 @@ class AppThemeInfo {
         selectionHandleColor: MyColors.primaryColor,
         selectionColor: MyColors.primaryColor.withOpacity(0.5),
       ),
-      tabBarTheme: const TabBarTheme(
+      tabBarTheme: const TabBarThemeData(
         labelStyle: TextStyle(fontSize: 16),
         unselectedLabelStyle: TextStyle(fontSize: 16),
       ),
-      dialogTheme: DialogTheme(
+      dialogTheme: DialogThemeData(
         titleTextStyle: const TextStyle(
           fontSize: 20,
           fontWeight: FontWeight.w700,
@@ -107,7 +107,7 @@ class AppThemeInfo {
           borderRadius: BorderRadius.circular(AppThemeInfo.borderRadius),
         ),
       ),
-      bottomAppBarTheme: const BottomAppBarTheme(
+      bottomAppBarTheme: const BottomAppBarThemeData(
         color: Colors.transparent,
         elevation: 0,
       ),
