@@ -39,7 +39,7 @@ dependencies:
   font_awesome_flutter: ^10.8.0
   google_fonts: ^6.2.1
   shared_preferences: ^2.3.3
-  fluttertoast: ^8.2.8
+  fluttertoast: ^9.0.0
   flutter_svg: ^2.0.10+1
   flutter_drawing_board: ^0.9.5
   flutter_colorpicker: ^1.1.0
