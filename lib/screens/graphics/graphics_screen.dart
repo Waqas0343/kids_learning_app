@@ -13,7 +13,8 @@ class GraphicsScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Graphic Design & Photo Editor"),
-        backgroundColor: Colors.green,
+        backgroundColor: Colors.purple,
+        centerTitle: true,
         actions: [
           IconButton(
             icon: const Icon(Icons.photo),

@@ -13,7 +13,7 @@ class DrawNumberScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Draw Number"),
-        backgroundColor: Colors.orangeAccent,
+        backgroundColor: Colors.purple,
         centerTitle: true,
       ),
       body: Padding(

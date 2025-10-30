@@ -21,7 +21,7 @@ class CharactersScreen extends StatelessWidget {
             color: Colors.white,
           ),
         ),
-        backgroundColor: Colors.red.shade700,
+        backgroundColor: Colors.purple,
         centerTitle: true,
         elevation: 4.0,
       ),
@@ -44,7 +44,7 @@ class CharactersScreen extends StatelessWidget {
                 ElevatedButton.icon(
                   onPressed: () => Get.toNamed(AppRoutes.drawCharacterScreen),
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.red.shade400,
+                    backgroundColor: Colors.purple,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8.0),
                     ),

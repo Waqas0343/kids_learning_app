@@ -22,7 +22,7 @@ class CharacterWiseObject extends StatelessWidget {
           )
 
         ),
-        backgroundColor: Colors.red.shade700,
+        backgroundColor: Colors.purple,
         centerTitle: true,
       ),
       body: Obx(() {

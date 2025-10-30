@@ -13,7 +13,7 @@ class DrawingScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.orange,
+        backgroundColor: Colors.purple,
         title: const Text("Drawing Board"),
         centerTitle: true,
       ),

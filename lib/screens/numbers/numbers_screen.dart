@@ -15,7 +15,7 @@ class NumbersScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Learn Numbers'),
         centerTitle: true,
-        backgroundColor: Colors.orangeAccent,
+        backgroundColor: Colors.purple,
         actions: <Widget>[
           IconButton(
             icon: const Icon(Icons.table_view_sharp),
@@ -41,7 +41,7 @@ class NumbersScreen extends StatelessWidget {
                 ElevatedButton.icon(
                   onPressed: () => Get.toNamed(AppRoutes.drawNumberScreen),
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.orangeAccent,
+                    backgroundColor: Colors.purple,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8.0),
                     ),
@@ -108,7 +108,7 @@ class NumbersScreen extends StatelessWidget {
                         ? () => controller.changePage(currentPage - 1)
                         : null,
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.orangeAccent,
+                      backgroundColor: Colors.purple,
                       disabledBackgroundColor: Colors.grey.shade300,
                     ),
                     child: const Text('Previous'),
@@ -126,7 +126,7 @@ class NumbersScreen extends StatelessWidget {
                         ? () => controller.changePage(currentPage + 1)
                         : null,
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.orangeAccent,
+                      backgroundColor: Colors.purple,
                       disabledBackgroundColor: Colors.grey.shade300,
                     ),
                     child: const Text('Next'),

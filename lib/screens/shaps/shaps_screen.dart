@@ -13,7 +13,7 @@ class ShapesScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Learn Shapes"),
-        backgroundColor: Colors.purple.shade400,
+        backgroundColor: Colors.purple,
         centerTitle: true,
       ),
       body: Padding(

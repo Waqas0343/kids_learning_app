@@ -12,7 +12,7 @@ class AnimalScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Learn Animals'),
-        backgroundColor: Colors.purple.shade400,
+        backgroundColor: Colors.purple,
         centerTitle: true,
       ),
       body: Padding(

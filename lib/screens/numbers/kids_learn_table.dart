@@ -14,7 +14,7 @@ class KidsLearnTable extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Learn Tables"),
         centerTitle: true,
-        backgroundColor: Colors.orangeAccent,
+        backgroundColor: Colors.purple,
       ),
       body: Obx(() {
         if (controller.tables.isEmpty) {

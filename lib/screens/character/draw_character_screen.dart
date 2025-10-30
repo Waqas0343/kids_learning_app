@@ -19,7 +19,7 @@ class DrawCharacterScreen extends StatelessWidget {
           style: Get.textTheme.titleSmall?.copyWith(
             fontWeight: FontWeight.bold, fontSize: 24, color: Colors.white,),
         ),
-        backgroundColor: Colors.red,
+        backgroundColor: Colors.purple,
         centerTitle: true,
         elevation: 6,
       ),

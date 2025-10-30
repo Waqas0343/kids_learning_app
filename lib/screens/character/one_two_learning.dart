@@ -20,7 +20,7 @@ class OneTwoLearning extends StatelessWidget {
             color: Colors.white,
           )
         ),
-        backgroundColor: Colors.orange.shade600,
+        backgroundColor: Colors.purple,
         elevation: 6,
         centerTitle: true,
       ),
@@ -47,19 +47,19 @@ class OneTwoLearning extends StatelessWidget {
                   borderRadius: BorderRadius.circular(20),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.orange.withOpacity(0.2),
+                      color: Colors.purple.withOpacity(0.2),
                       blurRadius: 8,
                       offset: const Offset(0, 5),
                     ),
                   ],
-                  border: Border.all(color: Colors.orange.shade300, width: 2),
+                  border: Border.all(color: Colors.purple.shade300, width: 2),
                 ),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     CircleAvatar(
                       radius: 30,
-                      backgroundColor: Colors.orange.shade400,
+                      backgroundColor:Colors.purple.shade400,
                       child: Text(
                           "$number",
                           style: Get.textTheme.titleSmall?.copyWith(
@@ -83,7 +83,7 @@ class OneTwoLearning extends StatelessWidget {
                     Container(
                       padding: const EdgeInsets.all(6),
                       decoration: BoxDecoration(
-                        color: Colors.orange.shade400,
+                        color: Colors.purple.shade400,
                         shape: BoxShape.circle,
                       ),
                       child: const Icon(

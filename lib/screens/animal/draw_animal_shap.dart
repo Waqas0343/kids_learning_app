@@ -11,6 +11,8 @@ class DrawAnimalShape extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Draw Animal Shape"),
+        backgroundColor: Colors.purple,
+        centerTitle: true,
       ),
     );
   }

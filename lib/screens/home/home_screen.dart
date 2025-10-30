@@ -19,7 +19,7 @@ class HomeScreen extends StatelessWidget {
               color: Colors.white,
               fontWeight: FontWeight.bold,
               fontSize: 24)),
-        backgroundColor: Colors.purple.shade400,
+        backgroundColor: Colors.purple,
         elevation: 4.0,
       ),
       body: Padding(
