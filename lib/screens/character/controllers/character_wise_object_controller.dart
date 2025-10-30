@@ -1,9 +1,10 @@
+import 'package:flutter_tts/flutter_tts.dart';
 import 'package:get/get.dart';
 
 import '../model/character_model.dart';
 
 class CharacterWiseObjectController extends GetxController {
-
+  final FlutterTts flutterTts = FlutterTts();
   final charactersList = <CharacterObjectModel>[
     CharacterObjectModel(character: 'A', objects: [
       {'name': 'Apple', 'image': 'https://static.wikia.nocookie.net/the-snack-encyclopedia/images/7/7d/Apple.png/revision/latest?cb=20200706145821'},
@@ -68,76 +69,76 @@ class CharacterWiseObjectController extends GetxController {
       {'name': 'Emu', 'image': 'https://easydrawingguides.com/wp-content/uploads/2024/05/how-to-draw-an-emu-featured-image-1200.png'},
     ]),
     CharacterObjectModel(character: 'F', objects: [
-      {'name': 'Frog', 'image': 'https://t3.ftcdn.net/jpg/05/49/49/82/360_F_549498276_AFnuz8nRNKBwHEiPDt86NacMrnEn13ib.jpg'},
-      {'name': 'Fish', 'image': 'https://ca.schleich-s.com/cdn/shop/products/14763_main_v16_TP.jpg?v=1691537299'},
-      {'name': 'Fly', 'image': 'https://img.pikbest.com/origin/09/69/99/76xpIkbEsTJzI.png!sw800'},
-      {'name': 'Fox', 'image': 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Earwig_on_white_background.jpg/1200px-Earwig_on_white_background.jpg'},
-      {'name': 'Fries', 'image': 'https://5.imimg.com/data5/BF/UU/NJ/SELLER-83011653/plain-paper-envelope-design-500x500.jpg'},
-      {'name': 'Flower', 'image': 'https://i.pinimg.com/474x/49/4c/92/494c92c5e909cac6fb80ffc9be0fb8a9.jpg'},
-      {'name': 'Flamingo', 'image': 'https://media.istockphoto.com/id/1394801910/vector/realistic-human-ear-isolated-on-white-background-human-ear-organ-hearing-health-care-closeup.jpg?s=612x612&w=0&k=20&c=Sz7uFiG7-aXja7r7M8qaSuH_7AicbixpuKB87LWKXbA='},
-      {'name': 'Fire', 'image': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKF2MpLAHv1sM4hl5SuAASLrB7x4893b5fbg&s'},
-      {'name': 'Fire Truck', 'image': 'https://static.pakwheels.com/2016/09/corvette-engine.jpg'},
-      {'name': 'Feather', 'image': 'https://easydrawingguides.com/wp-content/uploads/2024/05/how-to-draw-an-emu-featured-image-1200.png'},
+      {'name': 'Frog', 'image': 'https://www.bigappleherp.com/cdn/shop/products/800181L_groupgreentreefrog_1200x630.jpg?v=1548363542'},
+      {'name': 'Fish', 'image': 'https://files.nc.gov/deq/styles/article_card/public/images/2021-10/atlantic-bonito.jpg?VersionId=9QEVa4aBWw5AhgQt6Y5lrmKitWoetlw5&itok=7yNIlyIm'},
+      {'name': 'Fly', 'image': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkps3mkcpRa7KYdH9ZjWFChdP80SAo-yrs_dNue2uZELGi9ChEc9gm7q6VrOjgxXAnjIw&usqp=CAU'},
+      {'name': 'Fox', 'image': 'https://st5.depositphotos.com/1497380/65020/v/450/depositphotos_650206534-stock-illustration-cartoon-fox-sitting.jpg'},
+      {'name': 'Fries', 'image': 'https://pizzanfries.com.pk/wp-content/uploads/2023/10/Plain-French-Fries-pizza-n-fries.jpg'},
+      {'name': 'Flower', 'image': 'https://media.istockphoto.com/id/510266545/photo/tulip.jpg?s=612x612&w=0&k=20&c=UcRWBONYuWcTpUd_DMo6w1rlmPgxh0Cb_oDWxmyyJK4='},
+      {'name': 'Flamingo', 'image': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbzAltPLkVJDv_Dg2m2k-jVz1DKq7v-SdY1aHgzfc2frQoEok57g10EJMYflETAGk-gZM&usqp=CAU'},
+      {'name': 'Fire', 'image': 'https://media.istockphoto.com/id/1323529010/vector/fire-vector-isolated.jpg?s=612x612&w=0&k=20&c=ta6bKkXZDuqy2H3tRhR79sSl_-fdGhKyoenbbjEr3l0='},
+      {'name': 'Fire Truck', 'image': 'https://static.vecteezy.com/system/resources/previews/029/806/850/non_2x/red-fire-truck-illustration-emergency-rescue-truck-side-view-isolated-on-white-background-vector.jpg'},
+      {'name': 'Feather', 'image': 'https://www.shutterstock.com/image-photo/beautiful-orange-bird-feather-isolated-600nw-2290953155.jpg'},
     ]),
     CharacterObjectModel(character: 'G', objects: [
-      {'name': 'Frog', 'image': 'https://t3.ftcdn.net/jpg/05/49/49/82/360_F_549498276_AFnuz8nRNKBwHEiPDt86NacMrnEn13ib.jpg'},
-      {'name': 'Fish', 'image': 'https://ca.schleich-s.com/cdn/shop/products/14763_main_v16_TP.jpg?v=1691537299'},
-      {'name': 'Fly', 'image': 'https://img.pikbest.com/origin/09/69/99/76xpIkbEsTJzI.png!sw800'},
-      {'name': 'Fox', 'image': 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Earwig_on_white_background.jpg/1200px-Earwig_on_white_background.jpg'},
-      {'name': 'Fries', 'image': 'https://5.imimg.com/data5/BF/UU/NJ/SELLER-83011653/plain-paper-envelope-design-500x500.jpg'},
-      {'name': 'Flower', 'image': 'https://i.pinimg.com/474x/49/4c/92/494c92c5e909cac6fb80ffc9be0fb8a9.jpg'},
-      {'name': 'Flamingo', 'image': 'https://media.istockphoto.com/id/1394801910/vector/realistic-human-ear-isolated-on-white-background-human-ear-organ-hearing-health-care-closeup.jpg?s=612x612&w=0&k=20&c=Sz7uFiG7-aXja7r7M8qaSuH_7AicbixpuKB87LWKXbA='},
-      {'name': 'Fire', 'image': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKF2MpLAHv1sM4hl5SuAASLrB7x4893b5fbg&s'},
-      {'name': 'Fire Truck', 'image': 'https://static.pakwheels.com/2016/09/corvette-engine.jpg'},
-      {'name': 'Feather', 'image': 'https://easydrawingguides.com/wp-content/uploads/2024/05/how-to-draw-an-emu-featured-image-1200.png'},
+      {'name': 'Goat', 'image': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_WfiisR30R7phfttyO0MfLdpI2eUNACCc2mgaRjm3abLfI2I0_wk5Zuian9ZVd3txzb0&usqp=CAU'},
+      {'name': 'Gorilla', 'image': 'https://www.shutterstock.com/image-vector/gorilla-illustration-on-white-background-600nw-2433820107.jpg'},
+      {'name': 'Giraffe', 'image': 'https://wallpapers.com/images/hd/giraffe-pictures-2aqk932hx81iw8n1.jpg'},
+      {'name': 'Grapes', 'image': 'https://extension.psu.edu/media/catalog/product/5/9/598fa4dc3131dff06c11acffafcc0e6a.jpeg?quality=80&bg-color=255,255,255&fit=bounds&height=&width=&canvas=:'},
+      {'name': 'Guitar', 'image': 'https://www.soundunlimited.co.uk/cdn/shop/products/Valencia_3_4_VC203NA_91f76b46-5f4d-4139-adea-a56279e22d7c.jpg?v=1571306184&width=1080'},
+      {'name': 'Gloves', 'image': 'https://karachifire.com/wp-content/uploads/2022/03/Nitrile-Gloves_1.jpg'},
+      {'name': 'Glasses', 'image': 'https://www.tigerspecs.co.uk/products/1401028/detail.jpg'},
+      {'name': 'Gator', 'image': 'https://blog.machinefinder.com/wp-content/uploads/2025/02/Screenshot-2025-02-25-at-12.34.44%E2%80%AFPM.png'},
+      {'name': 'Goose', 'image': 'https://cdn4.volusion.store/kapts-nrbqf/v/vspfiles/photos/GOOSEEGG6-2T.jpg?v-cache=1590745950'},
+      {'name': 'Garlic', 'image': 'https://www.veggycation.com.au/siteassets/veggycationvegetable/garlic.jpg'},
     ]),
     CharacterObjectModel(character: 'H', objects: [
-      {'name': 'Frog', 'image': 'https://t3.ftcdn.net/jpg/05/49/49/82/360_F_549498276_AFnuz8nRNKBwHEiPDt86NacMrnEn13ib.jpg'},
-      {'name': 'Fish', 'image': 'https://ca.schleich-s.com/cdn/shop/products/14763_main_v16_TP.jpg?v=1691537299'},
-      {'name': 'Fly', 'image': 'https://img.pikbest.com/origin/09/69/99/76xpIkbEsTJzI.png!sw800'},
-      {'name': 'Fox', 'image': 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Earwig_on_white_background.jpg/1200px-Earwig_on_white_background.jpg'},
-      {'name': 'Fries', 'image': 'https://5.imimg.com/data5/BF/UU/NJ/SELLER-83011653/plain-paper-envelope-design-500x500.jpg'},
-      {'name': 'Flower', 'image': 'https://i.pinimg.com/474x/49/4c/92/494c92c5e909cac6fb80ffc9be0fb8a9.jpg'},
-      {'name': 'Flamingo', 'image': 'https://media.istockphoto.com/id/1394801910/vector/realistic-human-ear-isolated-on-white-background-human-ear-organ-hearing-health-care-closeup.jpg?s=612x612&w=0&k=20&c=Sz7uFiG7-aXja7r7M8qaSuH_7AicbixpuKB87LWKXbA='},
-      {'name': 'Fire', 'image': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKF2MpLAHv1sM4hl5SuAASLrB7x4893b5fbg&s'},
-      {'name': 'Fire Truck', 'image': 'https://static.pakwheels.com/2016/09/corvette-engine.jpg'},
-      {'name': 'Feather', 'image': 'https://easydrawingguides.com/wp-content/uploads/2024/05/how-to-draw-an-emu-featured-image-1200.png'},
+      {'name': 'Horse', 'image': 'https://t3.ftcdn.net/jpg/05/49/49/82/360_F_549498276_AFnuz8nRNKBwHEiPDt86NacMrnEn13ib.jpg'},
+      {'name': 'Hamster', 'image': 'https://ca.schleich-s.com/cdn/shop/products/14763_main_v16_TP.jpg?v=1691537299'},
+      {'name': 'Honeybee', 'image': 'https://img.pikbest.com/origin/09/69/99/76xpIkbEsTJzI.png!sw800'},
+      {'name': 'House', 'image': 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Earwig_on_white_background.jpg/1200px-Earwig_on_white_background.jpg'},
+      {'name': 'Hat', 'image': 'https://5.imimg.com/data5/BF/UU/NJ/SELLER-83011653/plain-paper-envelope-design-500x500.jpg'},
+      {'name': 'Hand', 'image': 'https://i.pinimg.com/474x/49/4c/92/494c92c5e909cac6fb80ffc9be0fb8a9.jpg'},
+      {'name': 'Hare', 'image': 'https://media.istockphoto.com/id/1394801910/vector/realistic-human-ear-isolated-on-white-background-human-ear-organ-hearing-health-care-closeup.jpg?s=612x612&w=0&k=20&c=Sz7uFiG7-aXja7r7M8qaSuH_7AicbixpuKB87LWKXbA='},
+      {'name': 'Hedgehog', 'image': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKF2MpLAHv1sM4hl5SuAASLrB7x4893b5fbg&s'},
+      {'name': 'Helicopter', 'image': 'https://static.pakwheels.com/2016/09/corvette-engine.jpg'},
+      {'name': 'Hammer', 'image': 'https://easydrawingguides.com/wp-content/uploads/2024/05/how-to-draw-an-emu-featured-image-1200.png'},
     ]),
     CharacterObjectModel(character: 'I', objects: [
-      {'name': 'Frog', 'image': 'https://t3.ftcdn.net/jpg/05/49/49/82/360_F_549498276_AFnuz8nRNKBwHEiPDt86NacMrnEn13ib.jpg'},
-      {'name': 'Fish', 'image': 'https://ca.schleich-s.com/cdn/shop/products/14763_main_v16_TP.jpg?v=1691537299'},
-      {'name': 'Fly', 'image': 'https://img.pikbest.com/origin/09/69/99/76xpIkbEsTJzI.png!sw800'},
-      {'name': 'Fox', 'image': 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Earwig_on_white_background.jpg/1200px-Earwig_on_white_background.jpg'},
-      {'name': 'Fries', 'image': 'https://5.imimg.com/data5/BF/UU/NJ/SELLER-83011653/plain-paper-envelope-design-500x500.jpg'},
-      {'name': 'Flower', 'image': 'https://i.pinimg.com/474x/49/4c/92/494c92c5e909cac6fb80ffc9be0fb8a9.jpg'},
-      {'name': 'Flamingo', 'image': 'https://media.istockphoto.com/id/1394801910/vector/realistic-human-ear-isolated-on-white-background-human-ear-organ-hearing-health-care-closeup.jpg?s=612x612&w=0&k=20&c=Sz7uFiG7-aXja7r7M8qaSuH_7AicbixpuKB87LWKXbA='},
-      {'name': 'Fire', 'image': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKF2MpLAHv1sM4hl5SuAASLrB7x4893b5fbg&s'},
-      {'name': 'Fire Truck', 'image': 'https://static.pakwheels.com/2016/09/corvette-engine.jpg'},
-      {'name': 'Feather', 'image': 'https://easydrawingguides.com/wp-content/uploads/2024/05/how-to-draw-an-emu-featured-image-1200.png'},
+      {'name': 'Ice Cream', 'image': 'https://t3.ftcdn.net/jpg/05/49/49/82/360_F_549498276_AFnuz8nRNKBwHEiPDt86NacMrnEn13ib.jpg'},
+      {'name': 'Ice Cube', 'image': 'https://ca.schleich-s.com/cdn/shop/products/14763_main_v16_TP.jpg?v=1691537299'},
+      {'name': 'Insect', 'image': 'https://img.pikbest.com/origin/09/69/99/76xpIkbEsTJzI.png!sw800'},
+      {'name': 'Ibis', 'image': 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Earwig_on_white_background.jpg/1200px-Earwig_on_white_background.jpg'},
+      {'name': 'Ink Pen', 'image': 'https://5.imimg.com/data5/BF/UU/NJ/SELLER-83011653/plain-paper-envelope-design-500x500.jpg'},
+      {'name': 'Iron', 'image': 'https://i.pinimg.com/474x/49/4c/92/494c92c5e909cac6fb80ffc9be0fb8a9.jpg'},
+      {'name': 'Island', 'image': 'https://media.istockphoto.com/id/1394801910/vector/realistic-human-ear-isolated-on-white-background-human-ear-organ-hearing-health-care-closeup.jpg?s=612x612&w=0&k=20&c=Sz7uFiG7-aXja7r7M8qaSuH_7AicbixpuKB87LWKXbA='},
+      {'name': 'Igloo', 'image': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKF2MpLAHv1sM4hl5SuAASLrB7x4893b5fbg&s'},
+      {'name': 'Ice Cap', 'image': 'https://static.pakwheels.com/2016/09/corvette-engine.jpg'},
+      {'name': 'Ice Bird', 'image': 'https://easydrawingguides.com/wp-content/uploads/2024/05/how-to-draw-an-emu-featured-image-1200.png'},
     ]),
     CharacterObjectModel(character: 'J', objects: [
-      {'name': 'Frog', 'image': 'https://t3.ftcdn.net/jpg/05/49/49/82/360_F_549498276_AFnuz8nRNKBwHEiPDt86NacMrnEn13ib.jpg'},
-      {'name': 'Fish', 'image': 'https://ca.schleich-s.com/cdn/shop/products/14763_main_v16_TP.jpg?v=1691537299'},
-      {'name': 'Fly', 'image': 'https://img.pikbest.com/origin/09/69/99/76xpIkbEsTJzI.png!sw800'},
-      {'name': 'Fox', 'image': 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Earwig_on_white_background.jpg/1200px-Earwig_on_white_background.jpg'},
-      {'name': 'Fries', 'image': 'https://5.imimg.com/data5/BF/UU/NJ/SELLER-83011653/plain-paper-envelope-design-500x500.jpg'},
-      {'name': 'Flower', 'image': 'https://i.pinimg.com/474x/49/4c/92/494c92c5e909cac6fb80ffc9be0fb8a9.jpg'},
-      {'name': 'Flamingo', 'image': 'https://media.istockphoto.com/id/1394801910/vector/realistic-human-ear-isolated-on-white-background-human-ear-organ-hearing-health-care-closeup.jpg?s=612x612&w=0&k=20&c=Sz7uFiG7-aXja7r7M8qaSuH_7AicbixpuKB87LWKXbA='},
-      {'name': 'Fire', 'image': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKF2MpLAHv1sM4hl5SuAASLrB7x4893b5fbg&s'},
-      {'name': 'Fire Truck', 'image': 'https://static.pakwheels.com/2016/09/corvette-engine.jpg'},
-      {'name': 'Feather', 'image': 'https://easydrawingguides.com/wp-content/uploads/2024/05/how-to-draw-an-emu-featured-image-1200.png'},
+      {'name': 'Joker', 'image': 'https://t3.ftcdn.net/jpg/05/49/49/82/360_F_549498276_AFnuz8nRNKBwHEiPDt86NacMrnEn13ib.jpg'},
+      {'name': 'Jackfruit', 'image': 'https://ca.schleich-s.com/cdn/shop/products/14763_main_v16_TP.jpg?v=1691537299'},
+      {'name': 'Joystick', 'image': 'https://img.pikbest.com/origin/09/69/99/76xpIkbEsTJzI.png!sw800'},
+      {'name': 'Jeans', 'image': 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Earwig_on_white_background.jpg/1200px-Earwig_on_white_background.jpg'},
+      {'name': 'Jewel', 'image': 'https://5.imimg.com/data5/BF/UU/NJ/SELLER-83011653/plain-paper-envelope-design-500x500.jpg'},
+      {'name': 'Jeep', 'image': 'https://i.pinimg.com/474x/49/4c/92/494c92c5e909cac6fb80ffc9be0fb8a9.jpg'},
+      {'name': 'Jasmine', 'image': 'https://media.istockphoto.com/id/1394801910/vector/realistic-human-ear-isolated-on-white-background-human-ear-organ-hearing-health-care-closeup.jpg?s=612x612&w=0&k=20&c=Sz7uFiG7-aXja7r7M8qaSuH_7AicbixpuKB87LWKXbA='},
+      {'name': 'Jacket', 'image': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKF2MpLAHv1sM4hl5SuAASLrB7x4893b5fbg&s'},
+      {'name': 'Judge', 'image': 'https://static.pakwheels.com/2016/09/corvette-engine.jpg'},
+      {'name': 'Juice', 'image': 'https://easydrawingguides.com/wp-content/uploads/2024/05/how-to-draw-an-emu-featured-image-1200.png'},
     ]),
     CharacterObjectModel(character: 'K', objects: [
-      {'name': 'Frog', 'image': 'https://t3.ftcdn.net/jpg/05/49/49/82/360_F_549498276_AFnuz8nRNKBwHEiPDt86NacMrnEn13ib.jpg'},
-      {'name': 'Fish', 'image': 'https://ca.schleich-s.com/cdn/shop/products/14763_main_v16_TP.jpg?v=1691537299'},
-      {'name': 'Fly', 'image': 'https://img.pikbest.com/origin/09/69/99/76xpIkbEsTJzI.png!sw800'},
-      {'name': 'Fox', 'image': 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Earwig_on_white_background.jpg/1200px-Earwig_on_white_background.jpg'},
-      {'name': 'Fries', 'image': 'https://5.imimg.com/data5/BF/UU/NJ/SELLER-83011653/plain-paper-envelope-design-500x500.jpg'},
-      {'name': 'Flower', 'image': 'https://i.pinimg.com/474x/49/4c/92/494c92c5e909cac6fb80ffc9be0fb8a9.jpg'},
-      {'name': 'Flamingo', 'image': 'https://media.istockphoto.com/id/1394801910/vector/realistic-human-ear-isolated-on-white-background-human-ear-organ-hearing-health-care-closeup.jpg?s=612x612&w=0&k=20&c=Sz7uFiG7-aXja7r7M8qaSuH_7AicbixpuKB87LWKXbA='},
-      {'name': 'Fire', 'image': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKF2MpLAHv1sM4hl5SuAASLrB7x4893b5fbg&s'},
-      {'name': 'Fire Truck', 'image': 'https://static.pakwheels.com/2016/09/corvette-engine.jpg'},
-      {'name': 'Feather', 'image': 'https://easydrawingguides.com/wp-content/uploads/2024/05/how-to-draw-an-emu-featured-image-1200.png'},
+      {'name': 'Kangaroo', 'image': 'https://t3.ftcdn.net/jpg/05/49/49/82/360_F_549498276_AFnuz8nRNKBwHEiPDt86NacMrnEn13ib.jpg'},
+      {'name': 'Key', 'image': 'https://ca.schleich-s.com/cdn/shop/products/14763_main_v16_TP.jpg?v=1691537299'},
+      {'name': 'King', 'image': 'https://img.pikbest.com/origin/09/69/99/76xpIkbEsTJzI.png!sw800'},
+      {'name': 'Kid', 'image': 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Earwig_on_white_background.jpg/1200px-Earwig_on_white_background.jpg'},
+      {'name': 'Kiwi', 'image': 'https://5.imimg.com/data5/BF/UU/NJ/SELLER-83011653/plain-paper-envelope-design-500x500.jpg'},
+      {'name': 'Knife', 'image': 'https://i.pinimg.com/474x/49/4c/92/494c92c5e909cac6fb80ffc9be0fb8a9.jpg'},
+      {'name': 'Kernel', 'image': 'https://media.istockphoto.com/id/1394801910/vector/realistic-human-ear-isolated-on-white-background-human-ear-organ-hearing-health-care-closeup.jpg?s=612x612&w=0&k=20&c=Sz7uFiG7-aXja7r7M8qaSuH_7AicbixpuKB87LWKXbA='},
+      {'name': 'Kingdom', 'image': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKF2MpLAHv1sM4hl5SuAASLrB7x4893b5fbg&s'},
+      {'name': 'Kitchen', 'image': 'https://static.pakwheels.com/2016/09/corvette-engine.jpg'},
+      {'name': 'Kite', 'image': 'https://easydrawingguides.com/wp-content/uploads/2024/05/how-to-draw-an-emu-featured-image-1200.png'},
     ]),
     CharacterObjectModel(character: 'L', objects: [
       {'name': 'Frog', 'image': 'https://t3.ftcdn.net/jpg/05/49/49/82/360_F_549498276_AFnuz8nRNKBwHEiPDt86NacMrnEn13ib.jpg'},
@@ -333,5 +334,14 @@ class CharacterWiseObjectController extends GetxController {
 
   void changeStage(String newStage) {
     stage.value = newStage;
+  }
+  Future<void> speakObject(String character, String objectName) async {
+    await flutterTts.speak("$character for $objectName");
+  }
+
+  @override
+  void onClose() {
+    flutterTts.stop();
+    super.onClose();
   }
 }

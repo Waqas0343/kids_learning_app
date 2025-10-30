@@ -59,15 +59,12 @@ class CharactersScreen extends StatelessWidget {
               ],
             ),
           ),
-
-          // 🔹 Grid of Characters
           SizedBox(
             height: 400,
             child: Obx(() {
               final characters = controller.isUppercase.value
                   ? controller.uppercaseLetters
                   : controller.lowercaseLetters;
-
               return GridView.builder(
                 padding:
                 const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),

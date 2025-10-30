@@ -26,6 +26,8 @@ class CharactersController extends GetxController {
   Future<void> speakCharacter(String character) async {
     await flutterTts.speak(character);
   }
+
+
   @override
   void onClose() {
     flutterTts.stop();

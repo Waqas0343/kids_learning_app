@@ -51,6 +51,7 @@ class CharacterWiseObject extends StatelessWidget {
                   itemBuilder: (context, index) {
                     final object = characterData.objects[index];
                     return CustomCard(
+                      onPressed: () => controller.speakObject(characterData.character, object['name']!),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
