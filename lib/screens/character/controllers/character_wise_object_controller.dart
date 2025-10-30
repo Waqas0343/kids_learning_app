@@ -36,7 +36,7 @@ class CharacterWiseObjectController extends GetxController {
       {'name': 'Car', 'image': 'https://image.made-in-china.com/202f0j00EwtcpBFnkIkJ/New-Exeed-Strerra-Et-4WD-Pure-Electric-Car-EV-Avto.webp'},
       {'name': 'Cake', 'image': 'https://thumbs.dreamstime.com/b/happy-birthday-cake-isolated-transparent-background-happy-birthday-cake-isolated-transparent-white-background-288617154.jpg'},
       {'name': 'Cow', 'image': 'https://www.shutterstock.com/image-photo/black-white-dairy-cow-clear-600nw-2628118303.jpg'},
-      {'name': 'Cap', 'image': 'https://media.rs-online.com/R1370285-01.jpg'},
+      {'name': 'Cap', 'image': 'https://customlids.ca/cdn/shop/products/21374192_02.jpg?v=1657065319'},
       {'name': 'Clock', 'image': 'https://cdn.pixabay.com/photo/2017/03/26/12/36/alarm-clock-2175382_1280.jpg'},
       {'name': 'Candle', 'image': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLfpbwEkZEpmRpgHnYNhisH6UmIyYgqFiq1MSavPro-jPDsO6O2lD07gblf0HRxYdtzsw&usqp=CAU'},
       {'name': 'Cloud', 'image': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-vM1xKOynb_jDQ4bw0G7-lkoop8_fUjipmaE0V6WbyW7FYSwQ7OnGq_7bxgh_rLxT91E&usqp=CAU'},
@@ -44,9 +44,16 @@ class CharacterWiseObjectController extends GetxController {
       {'name': 'Cup', 'image': 'https://www.forlifedesignusa.com/cdn/shop/products/550-TRQ.jpg?v=1581640656'},
     ]),
     CharacterObjectModel(character: 'D', objects: [
-      {'name': 'Ball', 'image': 'assets/images/ball.png'},
-      {'name': 'Bat', 'image': 'assets/images/bat.png'},
-      {'name': 'Banana', 'image': 'assets/images/banana.png'},
+      {'name': 'Dog', 'image': 'https://thumbs.dreamstime.com/b/side-view-golden-retriever-panting-standing-front-isolated-white-376594274.jpg'},
+      {'name': 'Doll', 'image': 'https://t3.ftcdn.net/jpg/00/62/18/54/360_F_62185421_cVM7RxbG5c2GAeJWMDtgyOiEM1iHyTOR.jpg'},
+      {'name': 'Duck', 'image': 'https://s3.us-west-2.amazonaws.com/cdn.classful.com/wp-content/uploads/2023/08/64ebef38903ed16070706591693183800413-img-6393.jpeg'},
+      {'name': 'Drum', 'image': 'https://www.shutterstock.com/image-vector/snare-drum-vector-isolated-illustration-600nw-2325704019.jpg'},
+      {'name': 'Door', 'image': 'https://www.neuffer.de/sites/de/files/img/frontdoors/l/country-house-door-pine-wood.jpg'},
+      {'name': 'Donkey', 'image': 'https://cdn.vectorstock.com/i/1000v/20/27/cartoon-donkey-animal-vector-44712027.jpg'},
+      {'name': 'Diamond', 'image': 'https://docs.growndiamondcorp.com/blog/types-of-diamonds.png'},
+      {'name': 'Desk', 'image': 'https://www.office-furniture-direct.co.uk/Cache/Images/MI003283-1-2048-2048-1500x1500-opaque.jpg'},
+      {'name': 'Dolphin', 'image': 'https://sketchok.com/images/articles/07-animals/05-sea-animals/10/10.jpg'},
+      {'name': 'Dress', 'image': 'https://img.bestdealplus.com/ae04/kf/S13dda55ab9e34deb87cf2eea49d4ff0bU.jpg'},
     ]),
   ].obs;
 

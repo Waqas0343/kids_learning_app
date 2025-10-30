@@ -1,7 +1,9 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:kids_learning_app/app_helpers/app_spacing.dart';
 import 'package:kids_learning_app/app_widgets/custom_card_widget.dart';
+import '../../app_styles/app_constant_file/app_images.dart';
 import 'controllers/character_wise_object_controller.dart';
 
 class CharacterWiseObject extends StatelessWidget {
@@ -52,7 +54,16 @@ class CharacterWiseObject extends StatelessWidget {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Image.network(object['image']!, height: 120),
+                          CachedNetworkImage(
+                            imageUrl: object['image']!,
+                            width: 150,
+                            height: 150,
+                            placeholder: (_, __) =>  const Center(
+                              child: CircularProgressIndicator(),
+                            ),
+                            errorWidget: (_, __, ___) => Image.asset(MyImages.splash),
+                            fit: BoxFit.contain,
+                          ),
                           Text(
                             object['name']!,
                             style:  Get.textTheme.titleSmall?.copyWith(
