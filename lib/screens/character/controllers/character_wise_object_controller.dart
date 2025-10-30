@@ -55,6 +55,18 @@ class CharacterWiseObjectController extends GetxController {
       {'name': 'Dolphin', 'image': 'https://sketchok.com/images/articles/07-animals/05-sea-animals/10/10.jpg'},
       {'name': 'Dress', 'image': 'https://img.bestdealplus.com/ae04/kf/S13dda55ab9e34deb87cf2eea49d4ff0bU.jpg'},
     ]),
+    CharacterObjectModel(character: 'E', objects: [
+      {'name': 'Egg', 'image': 'https://t3.ftcdn.net/jpg/05/49/49/82/360_F_549498276_AFnuz8nRNKBwHEiPDt86NacMrnEn13ib.jpg'},
+      {'name': 'Elephant', 'image': 'https://ca.schleich-s.com/cdn/shop/products/14763_main_v16_TP.jpg?v=1691537299'},
+      {'name': 'Eagle', 'image': 'https://img.pikbest.com/origin/09/69/99/76xpIkbEsTJzI.png!sw800'},
+      {'name': 'Earwig', 'image': 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Earwig_on_white_background.jpg/1200px-Earwig_on_white_background.jpg'},
+      {'name': 'Envelope', 'image': 'https://5.imimg.com/data5/BF/UU/NJ/SELLER-83011653/plain-paper-envelope-design-500x500.jpg'},
+      {'name': 'Eggplant', 'image': 'https://i.pinimg.com/474x/49/4c/92/494c92c5e909cac6fb80ffc9be0fb8a9.jpg'},
+      {'name': 'Ear', 'image': 'https://media.istockphoto.com/id/1394801910/vector/realistic-human-ear-isolated-on-white-background-human-ear-organ-hearing-health-care-closeup.jpg?s=612x612&w=0&k=20&c=Sz7uFiG7-aXja7r7M8qaSuH_7AicbixpuKB87LWKXbA='},
+      {'name': 'Earth', 'image': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKF2MpLAHv1sM4hl5SuAASLrB7x4893b5fbg&s'},
+      {'name': 'Engine', 'image': 'https://static.pakwheels.com/2016/09/corvette-engine.jpg'},
+      {'name': 'Emu', 'image': 'https://easydrawingguides.com/wp-content/uploads/2024/05/how-to-draw-an-emu-featured-image-1200.png'},
+    ]),
   ].obs;
 
   RxInt currentIndex = 0.obs;
