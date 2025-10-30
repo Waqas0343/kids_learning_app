@@ -35,84 +35,6 @@ class HomeScreen extends StatelessWidget {
               children: [
                 CustomCard(
                   onPressed: (){
-                    Get.toNamed(AppRoutes.drawingScreen);
-                  },
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image.asset(
-                          'assets/images/1_das.jpg',
-                          fit: BoxFit.fill,
-                          width: 120,
-                          height: 120),
-                      const SizedBox(height: 8),
-                    ],
-                  ),
-                ),
-                Align(
-                  alignment: Alignment.bottomCenter,
-                  child: Container(
-                    padding: const EdgeInsets.symmetric(
-                        vertical: 10.0, horizontal: 40.0),
-                    decoration: BoxDecoration(
-                      color: Colors.orange,
-                      borderRadius: BorderRadius.circular(16.0),
-                    ),
-                    child: Text(
-                      'Drawing',
-                      style: Get.textTheme.titleSmall?.copyWith(
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            Stack(
-              children: [
-                CustomCard(
-                  onPressed: (){
-                    Get.toNamed(AppRoutes.graphicsScreen);
-                  },
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image.asset(
-                          'assets/images/2_das.jpg',
-                          fit: BoxFit.fill,
-                          width: 120,
-                          height: 120),
-                      const SizedBox(height: 8),
-                    ],
-                  ),
-                ),
-                Align(
-                  alignment: Alignment.bottomCenter,
-                  child: Container(
-                    padding: const EdgeInsets.symmetric(
-                        vertical: 10.0, horizontal: 40.0),
-                    decoration: BoxDecoration(
-                      color: Colors.green,
-                      borderRadius: BorderRadius.circular(16.0),
-                    ),
-                    child: Text(
-                      'Graphic',
-                      style: Get.textTheme.titleSmall?.copyWith(
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            Stack(
-              children: [
-                CustomCard(
-                  onPressed: (){
                     Get.toNamed(AppRoutes.characterScreen);
                   },
                   child: Column(
@@ -333,6 +255,84 @@ class HomeScreen extends StatelessWidget {
                     ),
                     child: Text(
                       'Birds',
+                      style: Get.textTheme.titleSmall?.copyWith(
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            Stack(
+              children: [
+                CustomCard(
+                  onPressed: (){
+                    Get.toNamed(AppRoutes.drawingScreen);
+                  },
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset(
+                          'assets/images/1_das.jpg',
+                          fit: BoxFit.fill,
+                          width: 120,
+                          height: 120),
+                      const SizedBox(height: 8),
+                    ],
+                  ),
+                ),
+                Align(
+                  alignment: Alignment.bottomCenter,
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 10.0, horizontal: 40.0),
+                    decoration: BoxDecoration(
+                      color: Colors.orange,
+                      borderRadius: BorderRadius.circular(16.0),
+                    ),
+                    child: Text(
+                      'Drawing',
+                      style: Get.textTheme.titleSmall?.copyWith(
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            Stack(
+              children: [
+                CustomCard(
+                  onPressed: (){
+                    Get.toNamed(AppRoutes.graphicsScreen);
+                  },
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset(
+                          'assets/images/2_das.jpg',
+                          fit: BoxFit.fill,
+                          width: 120,
+                          height: 120),
+                      const SizedBox(height: 8),
+                    ],
+                  ),
+                ),
+                Align(
+                  alignment: Alignment.bottomCenter,
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 10.0, horizontal: 40.0),
+                    decoration: BoxDecoration(
+                      color: Colors.green,
+                      borderRadius: BorderRadius.circular(16.0),
+                    ),
+                    child: Text(
+                      'Graphic',
                       style: Get.textTheme.titleSmall?.copyWith(
                         fontSize: 14,
                         fontWeight: FontWeight.bold,
