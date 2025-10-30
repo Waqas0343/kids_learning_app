@@ -2,6 +2,7 @@ import 'package:get/get.dart';
 import '../screens/animal/animal_screen.dart';
 import '../screens/animal/draw_animal_shap.dart';
 import '../screens/birds/birds_screen.dart';
+import '../screens/character/character_wise_object.dart';
 import '../screens/character/characters_screen.dart';
 import '../screens/character/draw_character_screen.dart';
 import '../screens/colors/color_filling_screen.dart';
@@ -83,6 +84,10 @@ class AppPages {
     GetPage(
       name: AppRoutes.kidsLearnTableScreen,
       page: () => const KidsLearnTable(),
+    ),
+    GetPage(
+      name: AppRoutes.characterWiseObject,
+      page: () => const CharacterWiseObject(),
     ),
 
   ];

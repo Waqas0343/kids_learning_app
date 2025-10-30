@@ -9,6 +9,7 @@ class CharactersScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final CharactersController controller = Get.put(CharactersController());
+
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -26,6 +27,7 @@ class CharactersScreen extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          // 🔹 Header with Next Button
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: Row(
@@ -50,12 +52,15 @@ class CharactersScreen extends StatelessWidget {
                   icon: const Icon(Icons.arrow_forward, color: Colors.white),
                   label: const Text(
                     "Next",
-                    style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                        color: Colors.white, fontWeight: FontWeight.bold),
                   ),
                 ),
               ],
             ),
           ),
+
+          // 🔹 Grid of Characters
           SizedBox(
             height: 400,
             child: Obx(() {
@@ -64,7 +69,8 @@ class CharactersScreen extends StatelessWidget {
                   : controller.lowercaseLetters;
 
               return GridView.builder(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+                padding:
+                const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 6,
                   crossAxisSpacing: 10.0,
@@ -79,11 +85,14 @@ class CharactersScreen extends StatelessWidget {
                       controller.speakCharacter(character);
                     },
                     child: Obx(() {
-                      final isSelected = controller.selectedCharacter.value == character;
+                      final isSelected =
+                          controller.selectedCharacter.value == character;
                       return AnimatedContainer(
                         duration: const Duration(milliseconds: 300),
                         decoration: BoxDecoration(
-                          color: isSelected ? Colors.purple.shade400 : Colors.white,
+                          color: isSelected
+                              ? Colors.purple.shade400
+                              : Colors.white,
                           borderRadius: BorderRadius.circular(8.0),
                           boxShadow: isSelected
                               ? [
@@ -95,7 +104,9 @@ class CharactersScreen extends StatelessWidget {
                           ]
                               : [],
                           border: Border.all(
-                            color: isSelected ? Colors.purple.shade400 : Colors.grey.shade300,
+                            color: isSelected
+                                ? Colors.purple.shade400
+                                : Colors.grey.shade300,
                             width: 1.5,
                           ),
                         ),
@@ -105,7 +116,9 @@ class CharactersScreen extends StatelessWidget {
                             style: TextStyle(
                               fontSize: 24,
                               fontWeight: FontWeight.bold,
-                              color: isSelected ? Colors.white : Colors.red.shade700,
+                              color: isSelected
+                                  ? Colors.white
+                                  : Colors.red.shade700,
                             ),
                           ),
                         ),
@@ -124,7 +137,8 @@ class CharactersScreen extends StatelessWidget {
                 return ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.red.shade400,
-                    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 20, vertical: 14),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12),
                     ),
@@ -142,6 +156,26 @@ class CharactersScreen extends StatelessWidget {
                   ),
                 );
               }),
+            ),
+          ),
+          Center(
+            child: ElevatedButton(
+              onPressed: () => Get.toNamed(AppRoutes.characterWiseObject),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.purple,
+                padding:
+                const EdgeInsets.symmetric(horizontal: 24, vertical: 14),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
+              ),
+              child: const Text(
+                "Start Learning Objects",
+                style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white),
+              ),
             ),
           ),
         ],
