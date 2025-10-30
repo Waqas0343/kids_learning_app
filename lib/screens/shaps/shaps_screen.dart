@@ -56,7 +56,7 @@ class ShapesScreen extends StatelessWidget {
               child: Obx(() {
                 return GridView.builder(
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 3, // Number of shapes in a row
+                    crossAxisCount: 3,
                     crossAxisSpacing: 4,
                     mainAxisSpacing: 4,
                   ),
