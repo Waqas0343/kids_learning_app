@@ -16,6 +16,7 @@ class AppRoutes {
   static  String drawAnimalScreen = '/drawAnimalScreen';
   static  String kidsLearnTableScreen = '/kidsLearnTableScreen';
   static  String characterWiseObject = '/characterWiseObject';
+  static  String oneTwoLearning = '/oneTwoLearning';
 
 }
 

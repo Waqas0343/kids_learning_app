@@ -5,6 +5,7 @@ import '../screens/birds/birds_screen.dart';
 import '../screens/character/character_wise_object.dart';
 import '../screens/character/characters_screen.dart';
 import '../screens/character/draw_character_screen.dart';
+import '../screens/character/one_two_learning.dart';
 import '../screens/colors/color_filling_screen.dart';
 import '../screens/colors/colors_screen.dart';
 import '../screens/drawing/drawing_screen.dart';
@@ -88,6 +89,10 @@ class AppPages {
     GetPage(
       name: AppRoutes.characterWiseObject,
       page: () => const CharacterWiseObject(),
+    ),
+    GetPage(
+      name: AppRoutes.oneTwoLearning,
+      page: () => const OneTwoLearning(),
     ),
 
   ];
