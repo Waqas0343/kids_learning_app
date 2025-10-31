@@ -11,7 +11,7 @@ class CharacterWiseObject extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(CharacterWiseObjectController());
+    final CharacterWiseObjectController controller = Get.put(CharacterWiseObjectController());
 
     return Scaffold(
       appBar: AppBar(
