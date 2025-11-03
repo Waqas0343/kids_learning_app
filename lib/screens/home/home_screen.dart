@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:kids_learning_app/app_helpers/app_spacing.dart';
 import 'package:kids_learning_app/app_widgets/custom_card_widget.dart';
 import 'package:kids_learning_app/routes/app_routes.dart';
 import 'controller/home_screen_controller.dart';
@@ -29,6 +30,44 @@ class HomeScreen extends StatelessWidget {
           crossAxisSpacing: 1.0,
           mainAxisSpacing: 1.0,
           children: [
+            Stack(
+              children: [
+                CustomCard(
+                  onPressed: (){
+                    Get.toNamed(AppRoutes.graphicsScreen);
+                  },
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset(
+                          'assets/images/2_das.jpg',
+                          fit: BoxFit.fill,
+                          width: 120,
+                          height: 120),
+                       otherSpacerVertically(),
+                    ],
+                  ),
+                ),
+                Align(
+                  alignment: Alignment.bottomCenter,
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 40.0),
+                    decoration: BoxDecoration(
+                      color: Colors.cyan,
+                      borderRadius: BorderRadius.circular(16.0),
+                    ),
+                    child: Text(
+                      '  Urdu  ',
+                      style: Get.textTheme.titleSmall?.copyWith(
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
             Stack(
               children: [
                 CustomCard(
@@ -292,45 +331,6 @@ class HomeScreen extends StatelessWidget {
                     ),
                     child: Text(
                       'Drawing',
-                      style: Get.textTheme.titleSmall?.copyWith(
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            Stack(
-              children: [
-                CustomCard(
-                  onPressed: (){
-                    Get.toNamed(AppRoutes.graphicsScreen);
-                  },
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image.asset(
-                          'assets/images/2_das.jpg',
-                          fit: BoxFit.fill,
-                          width: 120,
-                          height: 120),
-                      const SizedBox(height: 8),
-                    ],
-                  ),
-                ),
-                Align(
-                  alignment: Alignment.bottomCenter,
-                  child: Container(
-                    padding: const EdgeInsets.symmetric(
-                        vertical: 10.0, horizontal: 40.0),
-                    decoration: BoxDecoration(
-                      color: Colors.green,
-                      borderRadius: BorderRadius.circular(16.0),
-                    ),
-                    child: Text(
-                      'Graphic',
                       style: Get.textTheme.titleSmall?.copyWith(
                         fontSize: 14,
                         fontWeight: FontWeight.bold,
