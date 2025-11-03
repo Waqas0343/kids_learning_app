@@ -91,7 +91,7 @@ class AppThemeInfo {
       textSelectionTheme: TextSelectionThemeData(
         cursorColor: MyColors.primaryColor,
         selectionHandleColor: MyColors.primaryColor,
-        selectionColor: MyColors.primaryColor.withOpacity(0.5),
+        selectionColor: MyColors.primaryColor.withValues(alpha: 0.5),
       ),
       tabBarTheme: const TabBarThemeData(
         labelStyle: TextStyle(fontSize: 16),

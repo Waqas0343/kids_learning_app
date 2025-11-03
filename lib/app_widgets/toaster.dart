@@ -62,7 +62,7 @@ class Toaster {
         debugPrint('Snackbar Status: $value');
       },
       overlayBlur: 2,
-      overlayColor: Colors.black.withOpacity(0.2),
+      overlayColor: Colors.black.withValues(alpha: 0.2),
       animationDuration: const Duration(milliseconds: 500),
     );
   }

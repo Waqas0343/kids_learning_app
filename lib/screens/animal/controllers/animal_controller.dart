@@ -47,10 +47,6 @@ class AnimalController extends GetxController {
 
   ].obs;
 
-  @override
-  void onInit() {
-    super.onInit();
-  }
 
   void onShapeClick(String shapeName) {
     Debug.log('Shape clicked: $shapeName');

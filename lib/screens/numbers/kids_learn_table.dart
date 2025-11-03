@@ -1,4 +1,3 @@
-import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../app_widgets/custom_card_widget.dart';
@@ -34,8 +33,6 @@ class KidsLearnTable extends StatelessWidget {
                 Colors.tealAccent.shade200,
                 Colors.orangeAccent.shade200,
               ];
-              final Color cardColor = cardColors[Random().nextInt(cardColors.length)];
-
               return GestureDetector(
                 onTap: () {
                   controller.speakTable(controller.tables[index]);
@@ -64,7 +61,7 @@ class KidsLearnTable extends StatelessWidget {
                                       shadows: [
                                         Shadow(
                                           blurRadius: 4,
-                                          color: Colors.black.withOpacity(0.3),
+                                          color: Colors.black.withValues(alpha: 0.2),
                                           offset: const Offset(2, 2),
                                         ),
                                       ],
@@ -72,7 +69,6 @@ class KidsLearnTable extends StatelessWidget {
                                   ),
                                 ),
                                 const SizedBox(height: 10),
-                                // Table content lines
                                 ...controller.tables[index].split("\n").map((line) {
                                   int lineIndex = controller.tables[index].split("\n").indexOf(line);
                                   return Obx(() => Text(
@@ -87,7 +83,7 @@ class KidsLearnTable extends StatelessWidget {
                                       wordSpacing: 2.0,
                                     ),
                                   ));
-                                }).toList(),
+                                }),
                               ],
                             ),
                           ),

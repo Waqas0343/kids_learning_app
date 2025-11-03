@@ -52,7 +52,6 @@ class UrduScreen extends StatelessWidget {
                 itemCount: controller.urduAlphabets.length,
                 itemBuilder: (context, index) {
                   final letter = controller.urduAlphabets[index];
-                  final isSelected = controller.selectedLetter.value == letter;
                   return GestureDetector(
                     onTap: () {
                       controller.selectLetter(letter);
@@ -77,7 +76,7 @@ class UrduScreen extends StatelessWidget {
                             boxShadow: selected
                                 ? [
                               BoxShadow(
-                                color: Colors.purple.withOpacity(0.3),
+                                color: Colors.purple.withValues(alpha: 0.3),
                                 blurRadius: 8,
                                 offset: const Offset(0, 4),
                               ),
@@ -117,7 +116,7 @@ class UrduScreen extends StatelessWidget {
               borderRadius: BorderRadius.circular(16),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.purple.withOpacity(0.2),
+                  color: Colors.purple.withValues(alpha: 0.2),
                   blurRadius: 6,
                   offset: const Offset(0, 4),
                 ),

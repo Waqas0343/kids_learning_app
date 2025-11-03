@@ -37,7 +37,6 @@ class CharacterController extends GetxController {
     try {
       isLoading.value = true;
       final boundary = repaintKey.currentContext?.findRenderObject() as RenderRepaintBoundary;
-      if (boundary == null) throw Exception("RenderRepaintBoundary is null");
 
       final image = await boundary.toImage(pixelRatio: 5.0); // Increased resolution
       final byteData = await image.toByteData(format: ImageByteFormat.png);
@@ -82,7 +81,7 @@ class CharacterController extends GetxController {
       final inputImage = InputImage.fromBytes(
         bytes: bytes,
         metadata: InputImageMetadata(
-          size: Size(1280, 720),
+          size: const Size(1280, 720),
           rotation: InputImageRotation.rotation0deg,
           format: InputImageFormat.nv21,
           bytesPerRow: 1280 * 4,
