@@ -34,7 +34,7 @@ class HomeScreen extends StatelessWidget {
               children: [
                 CustomCard(
                   onPressed: (){
-                    Get.toNamed(AppRoutes.graphicsScreen);
+                    Get.toNamed(AppRoutes.urduScreen);
                   },
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,

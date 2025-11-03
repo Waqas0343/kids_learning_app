@@ -9,7 +9,6 @@ import '../screens/character/one_two_learning.dart';
 import '../screens/colors/color_filling_screen.dart';
 import '../screens/colors/colors_screen.dart';
 import '../screens/drawing/drawing_screen.dart';
-import '../screens/graphics/graphics_screen.dart';
 import '../screens/home/home_screen.dart';
 import '../screens/numbers/draw_number_screen.dart';
 import '../screens/numbers/kids_learn_table.dart';
@@ -17,6 +16,7 @@ import '../screens/numbers/numbers_screen.dart';
 import '../screens/shaps/draw_shapes_screen.dart';
 import '../screens/shaps/shaps_screen.dart';
 import '../screens/splash/splash_screen.dart';
+import '../screens/urdu/urdu_screen.dart';
 import 'app_routes.dart';
 
 class AppPages {
@@ -34,8 +34,8 @@ class AppPages {
       page: () => const DrawingScreen(),
     ),
     GetPage(
-      name: AppRoutes.graphicsScreen,
-      page: () => const GraphicsScreen(),
+      name: AppRoutes.urduScreen,
+      page: () => const UrduScreen(),
     ),
     GetPage(
       name: AppRoutes.characterScreen,

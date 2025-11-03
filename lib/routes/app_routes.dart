@@ -2,7 +2,7 @@ class AppRoutes {
   static  String splash = '/splash';
   static  String homeScreen = '/homeScreen';
   static  String drawingScreen = '/drawingScreen';
-  static  String graphicsScreen = '/graphicsScreen';
+  static  String urduScreen = '/urduScreen';
   static  String characterScreen = '/characterScreen';
   static  String drawCharacterScreen = '/drawCharacterScreen';
   static  String numbersScreen = '/numbersScreen';
